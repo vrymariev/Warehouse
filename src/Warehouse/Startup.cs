@@ -39,12 +39,21 @@ namespace Warehouse
             });
             services.AddDbContext<ApplicationDbContext>(item => item.UseSqlServer(Configuration.GetConnectionString("DbConnectionString")));
             services.AddScoped<IRepository<GoodEntity>, Repository<GoodEntity>>();
+            services.AddScoped<IRepository<ManufacturerEntity>, Repository<ManufacturerEntity>>();
+            services.AddScoped<IRepository<CountryEntity>, Repository<CountryEntity>>();
             services.AddScoped<IGoodService, GoodService>();
+            services.AddScoped<IManufacturerService, ManufacturerService>();
+            services.AddScoped<ICountryService, CountryService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseCors(options => 
+                options.WithOrigins("http://localhost:3000")
+                .AllowAnyHeader()
+                .AllowAnyMethod());
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

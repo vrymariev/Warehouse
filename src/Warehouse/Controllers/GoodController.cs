@@ -1,8 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using DomainLayer.Models;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ServicesLayer.Services;
 
@@ -33,13 +31,15 @@ namespace Warehouse.Controllers
         [HttpGet]
         public async Task<List<GoodEntity>> List()
         {
-            return await _goodService.ListAsync();
+            var result = await _goodService.ListAsync();
+            return result;
         }
 
         [HttpPost]
         public async Task<IActionResult> Add(GoodEntity goodEntity)
         {
-            return Ok(await _goodService.AddAsync(goodEntity));
+            await _goodService.AddAsync(goodEntity);
+            return Ok();
         }
 
         [HttpPut("{id}")]

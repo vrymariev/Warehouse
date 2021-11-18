@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
 using DomainLayer.Models;
 
 namespace ServicesLayer.Services
 {
     public interface ICountryService
     {
-        //IEnumerable<CountryEntity> GetAllCountries();
-        //CountryEntity GetCountry(int id);
+        Task<List<CountryEntity>> ListAsync();
     }
 }

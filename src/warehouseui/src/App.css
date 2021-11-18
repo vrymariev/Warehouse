@@ -1,0 +1,42 @@
+.App {
+  text-align: center;
+}
+body {
+  padding: 15px;
+}
+
+table th,
+table td {
+  border: 1px solid rgb(12, 21, 104);
+  padding: 8px;
+  text-align: center;
+}
+
+.container {
+  display: flex;
+}
+
+nav {
+  border: 1px solid #095a3c;
+  border-radius: 5px;
+  padding: 5px;
+  margin-right: 25px;
+  height: 500px;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+    background-color: white;
+    color: black;
+    border: 2px solid #04AA6D;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-bottom: 5px;
+}

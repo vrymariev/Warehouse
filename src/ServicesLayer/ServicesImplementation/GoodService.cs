@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
 using DomainLayer.Models;
 using ServicesLayer.Repository;
 using ServicesLayer.Services;
-using TechTalk.SpecFlow.CommonModels;
 
 namespace ServicesLayer.ServicesImplementation
 {
@@ -30,6 +27,7 @@ namespace ServicesLayer.ServicesImplementation
         public Task<int> AddAsync(GoodEntity goodEntity)
         {
             return _repository.AddAsync(goodEntity);
+
         }
 
         public Task UpdateAsync(GoodEntity goodEntity)
